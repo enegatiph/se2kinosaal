@@ -71,11 +71,11 @@ public class KassenWerkzeug implements Observer
     	}
     	else if(o instanceof DatumAuswaehlWerkzeug)
     	{
-    		
+    		setzeTagesplanFuerAusgewaehltesDatum();
     	}
     	else if(o instanceof VorstellungAuswaehlWerkzeug)
     	{
-    		
+    		reagiereAufNeueVorstellungsWahl();
     	}
     	else
     	{
