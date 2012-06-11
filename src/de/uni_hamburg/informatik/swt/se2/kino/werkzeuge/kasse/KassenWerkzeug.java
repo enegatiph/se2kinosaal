@@ -51,6 +51,11 @@ public class KassenWerkzeug implements Observer
         _platzVerkaufsWerkzeug = new PlatzVerkaufsWerkzeug();
         _datumAuswaehlWerkzeug = new DatumAuswaehlWerkzeug();
         _vorstellungAuswaehlWerkzeug = new VorstellungAuswaehlWerkzeug();
+        
+        //als observer registrieren
+        _platzVerkaufsWerkzeug.addObserver(this);
+        _datumAuswaehlWerkzeug.addObserver(this);
+        _vorstellungAuswaehlWerkzeug.addObserver(this);
 
         // UI erstellen (mit eingebetteten UIs der direkten Subwerkzeuge)
         _ui = new KassenWerkzeugUI(_platzVerkaufsWerkzeug.getUIPanel(),
@@ -65,17 +70,18 @@ public class KassenWerkzeug implements Observer
     
     public void update(Observable o, Object arg)
     {
+    	System.out.printf("update() called\n");
     	if(o instanceof PlatzVerkaufsWerkzeug)
     	{
     		reagiereAufNeueVorstellungsWahl();
     	}
     	else if(o instanceof DatumAuswaehlWerkzeug)
     	{
-    		
+    		setzeTagesplanFuerAusgewaehltesDatum();
     	}
     	else if(o instanceof VorstellungAuswaehlWerkzeug)
     	{
-    		
+    		reagiereAufNeueVorstellungsWahl();
     	}
     	else
     	{
