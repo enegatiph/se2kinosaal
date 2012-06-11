@@ -2,6 +2,7 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.kasse;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
 import java.util.Observer;
 
 import de.uni_hamburg.informatik.swt.se2.kino.fachwerte.Datum;
@@ -62,9 +63,25 @@ public class KassenWerkzeug implements Observer
         _ui.zeigeFenster();
     }
     
-    private void update()
+    public void update(Observable o, Object arg)
     {
-    	
+    	if(o instanceof PlatzVerkaufsWerkzeug)
+    	{
+    		reagiereAufNeueVorstellungsWahl();
+    	}
+    	else if(o instanceof DatumAuswaehlWerkzeug)
+    	{
+    		
+    	}
+    	else if(o instanceof VorstellungAuswaehlWerkzeug)
+    	{
+    		
+    	}
+    	else
+    	{
+    		// fehler
+    	}
+    	 
     }
     /**
      * Fügt die Funktionalitat zum Beenden-Button hinzu.
