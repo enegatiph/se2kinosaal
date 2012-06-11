@@ -2,6 +2,7 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.platzverkauf;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
 import java.util.Set;
 
 import javax.swing.JPanel;
@@ -21,7 +22,7 @@ import de.uni_hamburg.informatik.swt.se2.kino.materialien.Vorstellung;
  * @author SE2-Team
  * @version SoSe 2012
  */
-public class PlatzVerkaufsWerkzeug
+public class PlatzVerkaufsWerkzeug extends Observable
 {
     private PlatzVerkaufsWerkzeugUI _ui;
 

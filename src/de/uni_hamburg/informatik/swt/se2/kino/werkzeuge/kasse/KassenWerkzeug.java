@@ -2,6 +2,7 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.kasse;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observer;
 
 import de.uni_hamburg.informatik.swt.se2.kino.fachwerte.Datum;
 import de.uni_hamburg.informatik.swt.se2.kino.materialien.Kino;
@@ -19,7 +20,7 @@ import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.vorstellungswaehler.Vors
  * @author SE2-Team
  * @version SoSe 2012
  */
-public class KassenWerkzeug
+public class KassenWerkzeug implements Observer
 {
     // Das Material dieses Werkzeugs
     private Kino _kino;
@@ -60,7 +61,11 @@ public class KassenWerkzeug
 
         _ui.zeigeFenster();
     }
-
+    
+    private void update()
+    {
+    	
+    }
     /**
      * Fügt die Funktionalitat zum Beenden-Button hinzu.
      */

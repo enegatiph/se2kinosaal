@@ -1,6 +1,7 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.vorstellungswaehler;
 
 import java.util.List;
+import java.util.Observable;
 
 import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
@@ -16,7 +17,7 @@ import de.uni_hamburg.informatik.swt.se2.kino.materialien.Vorstellung;
  * Dieses Werkzeug ist ein eingebettetes Subwerkzeug. Es benachrichtigt seine
  * Beobachter, wenn sich die ausgewählte Vorstellung geändert hat.
  */
-public class VorstellungAuswaehlWerkzeug
+public class VorstellungAuswaehlWerkzeug extends Observable
 {
     private VorstellungAuswaehlWerkzeugUI _ui;
 
