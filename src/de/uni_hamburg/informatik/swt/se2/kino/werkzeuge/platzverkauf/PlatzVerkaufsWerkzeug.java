@@ -176,6 +176,11 @@ public class PlatzVerkaufsWerkzeug extends Observable
         Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
         vorstellung.verkaufePlaetze(plaetze);
         aktualisierePlatzplan();
+        
+        //Ueber aenderungen informieren
+        setChanged();
+        notifyObservers( this);
+        clearChanged();
     }
 
     /**
@@ -186,5 +191,10 @@ public class PlatzVerkaufsWerkzeug extends Observable
         Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
         vorstellung.stornierePlaetze(plaetze);
         aktualisierePlatzplan();
+        
+        //Ueber aenderungen informieren
+        setChanged();
+        notifyObservers( this);
+        clearChanged();
     }
 }

@@ -39,6 +39,10 @@ public class VorstellungAuswaehlWerkzeug extends Observable
      */
     private void vorstellungWurdeAusgewaehlt()
     {
+        //Ueber aenderungen informieren
+        setChanged();
+        notifyObservers( this);
+        clearChanged();
     }
 
     /**

@@ -68,9 +68,9 @@ public class KassenWerkzeug implements Observer
         _ui.zeigeFenster();
     }
     
+    //update handler
     public void update(Observable o, Object arg)
     {
-    	System.out.printf("update() called\n");
     	if(o instanceof PlatzVerkaufsWerkzeug)
     	{
     		reagiereAufNeueVorstellungsWahl();
